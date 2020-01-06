@@ -18,20 +18,23 @@ function! gql#execute(endpoint, start, end) abort
     call s:echo_err('not found curl, please install curl: https://curl.haxx.se/')
     return
   endif
-  let contens = join(getline(a:start, a:end), " ")
+  if a:start == a:end
+    let contens = join(getline(1, "$"), " ")
+  else
+    let contens = join(getline(a:start, a:end), " ")
+  endif
 
   if bufexists(s:bufname)
     let buf = bufnr(s:bufname)
     let winid = win_findbuf(buf)
     if empty(winid)
-      exec 'new | e' s:bufname '| %d_'
+      silent exec 'new | e' s:bufname '| %d_'
     endif
     call win_execute(winid[0], '%d_')
   else
-    exec 'new' s:bufname '| %d_'
+    silent exec 'new' s:bufname '| %d_'
     set buftype=nofile | set ft=json | nnoremap <buffer> q :bw<CR>
   endif
-  redraw
 
   let base_cmd = ['curl']
   let args = ['-s', '-X', 'POST']
@@ -49,6 +52,7 @@ function! gql#execute(endpoint, start, end) abort
 
   let cmd = join(base_cmd, " ")
   call setbufline(s:bufname, 1, systemlist(cmd))
+  redraw
 endfunction
 
 let &cpo = s:save_cpo
