@@ -1,0 +1,89 @@
+*gql.txt*	a summary
+
+Version : 0.0.1
+Author  : skanehira <sho19921005@gmai.com>
+License : MIT license  {{{
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+}}}
+
+==============================================================================
+CONTENTS					*gql-contents*
+
+INTRODUCTION			|gql-introduction|
+USAGE				|gql-usage|
+INTERFACE			|gql-interface|
+  COMMANDS			  |gql-commands|
+  FUNCTIONS			  |gql-functions|
+TODO				|gql-todo|
+CHANGELOG			|gql-changelog|
+
+
+==============================================================================
+INTRODUCTION					*gql-introduction*
+
+gql.vim is a plugin that calls GraphQL API.
+
+Latest version:
+https://github.com/skanehira/gql.vim
+
+==============================================================================
+INSTALL						*gql-install*
+
+Requirements:
+* curl
+
+Recommend:
+* jq
+
+==============================================================================
+USAGE						*gql-usage*
+
+
+
+==============================================================================
+INTERFACE					*gql-interface*
+
+VARIABLES					*gql-variables*
+g:gql_authorization_token			*g:gql_authorization_token*
+	If you wanto use `Authorization: bearer {token}` header,
+	you can set token to this variable.
+
+------------------------------------------------------------------------------
+COMMANDS					*gql-commands*
+
+:GraphQL {host}					*:GraphQL*
+	Send buffer contents to {host}.
+	If doesn't select range, buffer's contents will send all.
+	If you select range, the range contents will send.
+
+------------------------------------------------------------------------------
+FUNCTIONS					*gql-functions*
+
+
+==============================================================================
+TODO						*gql-todo*
+
+
+
+==============================================================================
+CHANGELOG					*gql-changelog*
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
