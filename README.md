@@ -1,6 +1,8 @@
 # gql.vim
 gql.vim is a plugin that calls GraphQL API.
 
+![](https://i.imgur.com/lYaJyLH.png)
+
 ## Requrements
 - curl
 
