@@ -47,7 +47,7 @@ function! gql#execute(endpoint, start, end) abort
   let base_cmd += args
 
   if executable('jq')
-    let base_cmd += ['| jq']
+    let base_cmd += ['| jq .']
   endif
 
   let cmd = join(base_cmd, " ")
