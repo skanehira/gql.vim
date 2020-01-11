@@ -15,7 +15,7 @@ endfunction
 
 function! gql#execute(endpoint, start, end) abort
   if !executable('curl')
-    call s:echo_err('not found curl, please install curl: https://curl.haxx.se/')
+    call s:echo_err('curl not found, please install curl: https://curl.haxx.se/')
     return
   endif
   if a:start == a:end
